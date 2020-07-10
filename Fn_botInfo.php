@@ -12,5 +12,6 @@ $bogId = "Y2lzY29zcGFyazovL3Vz....zZjhiLTRiYTMtODcwOS03MmE2NGE2Nzg0OWQ";
 
 $client_id = 'Ccf1789f7bc9b9eda238d8....3008057945b89a4aedff76ba27789a';
 $Client_Secret = '9255855c73022b76ed8e31.....20e5b14bd0c1f19692f3';
-$redirect_uri = urlencode('https://[your server]/log/Fn_oAuth.php');
+$baseURL = 'https://[your server]';
+$redirect_uri = urlencode($baseURL.'/log/Fn_oAuth.php');
 ?>
