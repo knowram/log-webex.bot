@@ -48,17 +48,17 @@ if (!isset($_COOKIE['SparkapiAccess_token'])){
       $access = json_decode($response);
       setcookie('SparkapiAccess_token', $access->access_token, 0, '/');
       if(isset($_COOKIE['Return2Page'])){
-        setcookie('Return2Page', 'https://bots.wxteams.com', time() - 3600, '/');
-        header("Location: https://bots.wxteams.com".$_COOKIE['Return2Page'],TRUE,307); /* Redirect browser */
+        setcookie('Return2Page', $baseURL, time() - 3600, '/');
+        header("Location: $baseURL.".$_COOKIE['Return2Page'],TRUE,307); /* Redirect browser */
       }else{
-        header("Location: https://bots.wxteams.com/log/",TRUE,307); /* Redirect browser */
+        header("Location: ".$baseURL."/log/",TRUE,307); /* Redirect browser */
       }
       exit;
     }
   }
 }elseif(isset($_REQUEST['logout']) && $_REQUEST['logout'] == 'out'){
-  setcookie('SparkapiAccess_token', 'https://bots.wxteams.com', time() - 3600, '/');
-  header("Location: https://bots.wxteams.com/log/",TRUE,307); /* Redirect browser */
+  setcookie('SparkapiAccess_token', $baseURL, time() - 3600, '/');
+  header("Location: ".$baseURL."/log/",TRUE,307); /* Redirect browser */
   exit;
 }
 ?>
